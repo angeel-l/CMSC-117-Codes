@@ -122,28 +122,25 @@ def MaxNorm(A, xtild, d):
         rmn = rmn + abs(i)
     return rmn
 
-def LUKJI(A):
+def LUIJK(A):
     n = len(A)
-    for k in range(0,n):
-        for j in range(k+1,n):
-            A[j][k] = A[j][k] / A[k][k]
-        for j in range(k+1,n):
-            for i in range(k+1,n):
-                A[i][j] = A[i][j] - A[i][k]*A[k][j]
-    return A
-
-def LUJKI(A):
-    n = len(A)
-    for j in range(0,n):
-        for k in range(0,j):
-            for i in range(k+1,n):
-                A[i][j] = A[i][j] - A[i][k]*A[k][j]
-        for k in range(j+1,n):
-            A[k][j] = A[k][j] / A[j][j]
+    for j in range(1,n):
+        A[j][0] = A[j][0] / A[0][0]
+    for i in range(1,n):
+        for j in range(i,n):
+            s = 0
+            for k in range(0,i):
+                s = s + A[i][k]*A[k][j]
+            A[i][j] = A[i][j] - s
+        for j in range(i+1, n):
+            s = 0
+            for k in range(0,i):
+                s = s + A[j][k]*A[k][i]
+            A[j][i] = (A[j][i] - s) / A[i][i]
     return A
 
 def GetLU(A):
-    A = LUKJI(A)
+    A = LUIJK(A)
     n = len(A)
     L = np.zeros((n,n))
     U = np.zeros((n,n))
@@ -155,3 +152,9 @@ def GetLU(A):
             U[i][j] = A[i][j]
     return (L, U)
             
+def LUSolve(A, b):
+    L, U = GetLU(A)
+    y, normf = ForwardSubRow(L, b)
+    x, normb = BackwardSubRow(U, y)
+    normx = MaxNorm(A, x, b)
+    return x, normx
