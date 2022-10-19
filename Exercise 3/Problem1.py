@@ -31,8 +31,8 @@ br, normbr = md.BackwardSubRow(A, a)
 bc, normbc = md.BackwardSubCol(A, a)
 
 # Writing to file Item1a.txt
-answers = ["Backward Substitution by Rows: \n\n%s\n" % br, "\nResidual Max Norm: %s" %  normbr,
-           "\nBackward Substitution by Columns: \n\n%s\n" % bc, "\nResidual Max Norm: %s" %  normbc]
+answers = ["Solution using Backward Substitution by Rows: \n\n%s\n" % br, "\nResidual Max Norm: %s\n" %  normbr,
+           "\nSolution using Backward Substitution by Columns: \n\n%s\n" % bc, "\nResidual Max Norm: %s" %  normbc]
 file1a.writelines(answers)
 
 
@@ -42,6 +42,6 @@ fr, normfr = md.ForwardSubRow(A, b)
 fc, normfc = md.ForwardSubCol(A, b)
 
 # Writing to file Item1b.txt
-answers = ["Forward Substitution by Rows: \n\n%s\n" % fr, "\nResidual Max Norm: %s" %  normfr,
-           "\nForward Substitution by Columns: \n\n%s\n" % fc, "\nResidual Max Norm: %s" %  normfc]
+answers = ["Solution using Forward Substitution by Rows: \n\n%s\n" % fr, "\nResidual Max Norm: %s\n" %  normfr,
+           "\nSolution using Forward Substitution by Columns: \n\n%s\n" % fc, "\nResidual Max Norm: %s" %  normfc]
 file1b.writelines(answers)

@@ -1,4 +1,4 @@
-Forward Substitution by Rows: 
+Solution using Forward Substitution by Rows: 
 
 [ 1.00000000e+000  1.00000000e+000  0.00000000e+000  0.00000000e+000
   4.00000000e+000 -1.40000000e+001  8.70000000e+001 -5.63000000e+002
@@ -27,7 +27,8 @@ Forward Substitution by Rows:
   8.66126662e+148 -8.39873119e+150  8.22989946e+152 -8.14508951e+154]
 
 Residual Max Norm: 6.366511038427212e+136
-Forward Substitution by Columns: 
+
+Solution using Forward Substitution by Columns: 
 
 [ 1.00000000e+000  1.00000000e+000  0.00000000e+000  0.00000000e+000
   4.00000000e+000 -1.40000000e+001  8.70000000e+001 -5.63000000e+002

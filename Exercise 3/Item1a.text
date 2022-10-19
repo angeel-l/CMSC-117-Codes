@@ -1,4 +1,4 @@
-Backward Substitution by Rows: 
+Solution using Backward Substitution by Rows: 
 
 [-9.79585297e+154  2.61271106e+155 -2.55694742e+155  9.23821653e+154
  -2.70281186e+154  5.57636434e+153 -9.98783798e+152  1.45080731e+152
@@ -27,7 +27,8 @@ Backward Substitution by Rows:
  -9.31296000e+005  9.60200000e+003 -9.80000000e+001  1.00000000e+000]
 
 Residual Max Norm: 91.0
-Backward Substitution by Columns: 
+
+Solution using Backward Substitution by Columns: 
 
 [-9.79585297e+154  2.61271106e+155 -2.55694742e+155  9.23821653e+154
  -2.70281186e+154  5.57636434e+153 -9.98783798e+152  1.45080731e+152
