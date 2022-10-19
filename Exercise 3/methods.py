@@ -123,6 +123,18 @@ def MaxNorm(A, xtild, d):
     return rmn
 
 def LUIJK(A):
+    """
+    Solving for the LU factorization in A stored in A
+
+    Parameters:
+    A: matrix
+       n x n
+
+    Output
+    ------
+    A: matrix
+       n x n, LU factorization of the input A
+    """
     n = len(A)
     for j in range(1,n):
         A[j][0] = A[j][0] / A[0][0]
@@ -140,6 +152,18 @@ def LUIJK(A):
     return A
 
 def GetLU(A):
+    """
+    Solving for the LU factors of A
+
+    Parameters:
+    A: matrix
+       n x n
+
+    Output
+    ------
+    L: n x n, lower triangular matrix
+    U: n x n, upper triangular matrix
+    """
     A = LUIJK(A)
     n = len(A)
     L = np.zeros((n,n))
@@ -153,6 +177,15 @@ def GetLU(A):
     return (L, U)
             
 def LUSolve(A, b):
+    """
+    Solving for x by Ly = b and Ux = y
+    
+    Parameters:
+    A: matrix
+       n x n
+    b: vector
+       n x 1
+    """
     L, U = GetLU(A)
     y, normf = ForwardSubRow(L, b)
     x, normb = BackwardSubRow(U, y)
